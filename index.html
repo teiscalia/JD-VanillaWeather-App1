@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <title>Vanilla Weather</title>
   </head>
@@ -20,10 +21,10 @@
       <div class="weatherWrapper">
         <div class="weatherApp">
           <div class="overview">
-            <h1>New York</h1>
+            <h1 id="city"></h1>
             <ul class="mainWeather">
-              <li>Tuesday 3:57</li>
-              <li>Clear</li>
+              <li id="date"></li>
+              <li id="description">Clear</li>
             </ul>
           </div>
           <div class="row">
@@ -35,7 +36,7 @@
                   class="float-left"
                 />
                 <span class="float">
-                  <strong>16</strong>
+                  <strong id="temperature"></strong>
                   <span class="units">°C|<a href="">°F</a></span></span
                 >
               </div>
@@ -44,8 +45,8 @@
               <ul>
                 <li>Precipitation 0%</li>
 
-                <li>Humidity 73%</li>
-                <li>Wind 2Km/h</li>
+                <li>Humidity <span id="humidity"></span></li>
+                <li>Wind speed <span id="windSpeed"></span>km/h</li>
               </ul>
             </div>
           </div>
