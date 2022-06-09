@@ -65,4 +65,20 @@ li {
     position: relative;
     font-size: 16px;
     top: -34px;
+    cursor: default;
+}
+
+.weather-temperature .active {
+    text-decoration: none;
+    color: rgb(33, 33, 33);
+    cursor: default;
+
+}
+
+#fahrenheit-link {
+    text-decoration: none;
+}
+
+#celsius-link {
+    text-decoration: none;
 }
