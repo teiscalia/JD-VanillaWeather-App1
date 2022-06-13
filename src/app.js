@@ -21,6 +21,11 @@ function formatDate(timestamp) {
 
   return `${day}, ${hours}:${minutes}`;
 }
+function getforcast(coordinates) {
+  let apiKey = "252dddcfb9a3bf1e6e04c55d681319cc";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -42,6 +47,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getforcast(response.data.coords);
 }
 function handleSubmit(event) {
   event.preventDefault();
